@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {{--{{dd(auth()->user()->name)}}--}}
-{{--{{dd(!empty($tarefas))}}--}}
+{{--{{dd($tarefas)}}--}}
 
 @extends('layouts.header');
 
@@ -124,8 +124,6 @@
                                 <div class="table-responsive">
 
                                     <table class="table" id="MyTable">
-
-
                                         <thead class="">
                                         <th>
                                             ID Tarefa
@@ -145,7 +143,13 @@
                                         <th>
                                             Equipe
                                         </th>
-
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>
+                                           
+                                          <a href=""> test</a>
+                                       </th>
                                         </thead>
                                         <tbody>
                                         @if(!empty($tarefas))
@@ -154,11 +158,18 @@
                                             @foreach($tarefas as $key => $array)
                                             @foreach($array as $column_name => $value)
                                                 <td>{{ $value }}</td>
+
                                         @endforeach
+                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal">
+                        Notice modal
+                      <div class="ripple-container"></div></button></td>
                                         </tbody>
                                             @endforeach
+
                                         @endif
                                         @endif
+
+@include('dashboard.modal');
                                     </table>
                                 </div>
                             </div>

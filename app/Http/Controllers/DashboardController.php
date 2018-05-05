@@ -132,7 +132,7 @@ public function task(Request $request){
     $idtarefa = $resultstarefa['0'] + 1; //ID Auto Increment Equipe Usuario
 //dd($idtarefa);
 
-    DB::insert('insert into duomo.tarefa(idTarefa,DescricaoTarefa,DataEntrega,Prioridade,EquipeUsuario_idEquipeUsuario,NomeTarefa) values ('.$idtarefa.',"'.$DescTarefa.'","'.$DtEntregaFormt.'","'.$Prioridade.'","'.$Team.'","'.$NomeTarefa.'") ');//#3
+    DB::insert('insert into duomo.tarefa(idTarefa,DescricaoTarefa,DataEntrega,Prioridade,EquipeUsuario_idEquipeUsuario,NomeTarefa,status) values ('.$idtarefa.',"'.$DescTarefa.'","'.$DtEntregaFormt.'","'.$Prioridade.'","'.$Team.'","'.$NomeTarefa.'","1") ');//#3
 
 
     return redirect('createtask');

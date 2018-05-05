@@ -6,7 +6,7 @@
 {{--{{dd(Session::flash('sucess', 'sucess'))}}--}}
 {{--@extends('dashboard.dashboard');--}}
 {{--{{dd(Session::get('usuario.nome.0')->Nome)}}--}}
-<div class="wrapper">
+<div class="">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="{{ asset('assets/img/sidebar-1.jpg') }}">
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
