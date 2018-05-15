@@ -244,4 +244,12 @@ public function notification(Request $request){
 
 
 }
+public function modalget(Request $request){
+dd($request);
+
+}
+public function modalpost(Request $request){
+
+
+}
 }

@@ -1,4 +1,6 @@
  <!-- Classic Modal -->
+
+ <form method="post" action="">
                       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
@@ -10,11 +12,18 @@
                             </div>
                             <div class="modal-body">
                               <div class="form-group bmd-form-group">
-                      <label for="exampleEmail" class="bmd-label-floating">Nome da Tarefa</label>
-                      <input type="email" class="form-control" id="exampleEmail">
+                      {{--<label for="exampleEmail" class="bmd-label-floating">Nome <d></d>a Tarefa</label>--}}
+                                  Nome da Tarefa:
+                                  <input type="text" class="form-control" id="exampleEmail" placeholder="Nome da Tarefa">
                         <div class="form-group bmd-form-group">
-                          <input style="margin-top: 25px;" type="text" class="form-control" placeholder="Descrição da tarefa">
+                          Descrição da Tarefa:
+                            <textarea style="margin-top: 25px;" type="text" class="form-control" placeholder="Descrição da tarefa"></textarea>
+                          {{--<input style="margin-top: 25px;" type="text" class="form-control" placeholder="Descrição da tarefa">--}}
                         </div>
+                                  <div class="form-group bmd-form-group is-filled">
+                                      Data de entrega:
+                                      <input type="date" class="form-control"  value="10/05/2016">
+                                  </div>
                         <div class="col-lg-12">
                         <div class="col-lg-4 col-md-6 col-sm-3">
                           <div class="dropdown">
@@ -43,11 +52,24 @@
                             </div>
                           </div>
                           </div>
+                            </p>
+                            <div class="col-lg-4 col-md-6 col-sm-3">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle btn btn-primary btn-round btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Status
+                                        <div class="ripple-container"></div></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; top: 40px; left: 1px; will-change: top, left;">
+                                        <h6 class="dropdown-header">Dropdown header</h6>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div> 
                             </div>
-                            <div class="form-group bmd-form-group is-filled">
-                    <input type="text" class="form-control datetimepicker" value="10/05/2016">
-                  </div>
+
 
                             <div class="modal-footer">
                               <button type="button" class="btn btn-link">Nice Button</button>
@@ -56,5 +78,8 @@
                           </div>
                         </div>
                       </div>
+                      </div>
                       <!--  End Modal -->
 @include('layouts.js')
+
+ </form>

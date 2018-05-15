@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@extends('layouts.header');
+@include('layouts.header');
 <body class="">
 {{--{{dd($teams)}}--}}
-{{--@extends('dashboard.dashboard');--}}
+{{--@include('dashboard.dashboard');--}}
 {{--{{dd(Session::get('usuario.nome.0')->Nome)}}--}}
 <div class="">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="{{ asset('assets/img/sidebar-1.jpg') }}">
@@ -418,6 +418,6 @@
 </div>
 </body>
 <!--   Core JS Files   -->
-@extends('layouts.js');
+@include('layouts.js');
 
 </html>

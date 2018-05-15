@@ -3,10 +3,10 @@
 {{--{{dd(auth()->user()->name)}}--}}
 {{--{{dd($tarefas)}}--}}
 
-@extends('layouts.header');
+@include('layouts.header');
 
 <body class="">
-@extends('layouts.options');
+@include('layouts.options');
 {{--{{dd(Session::all('usuario')) }}--}}
     <div class="main-panel">
 
@@ -111,7 +111,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-icon card-header-rose">
@@ -157,11 +156,12 @@
                                         <tr class="table-success">
                                             @foreach($tarefas as $key => $array)
                                             @foreach($array as $column_name => $value)
+                                                    {{--{{dd($tarefas)}}--}}
                                                 <td>{{ $value }}</td>
 
                                         @endforeach
-                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal">
-                        Notice modal
+                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal" href="{{route('modalget')}}?codigo=<?php echo $value; ?>">
+                        Editar Tarefa
                       <div class="ripple-container"></div></button></td>
                                         </tbody>
                                             @endforeach
@@ -180,11 +180,11 @@
 
         </div>
         </div>
-@extends('layouts.footer');
+@include('layouts.footer');
     </div>
 </div>
 </body>
-@extends('layouts.js');
+@include('layouts.js');
 <script src="../../assets/js/core/jquery.min.js"></script>
 <script src="../../assets/js/core/popper.min.js"></script>
 <script src="../../assets/js/bootstrap-material-design.js"></script>
@@ -278,23 +278,8 @@
 
         $('.card .material-datatables label').addClass('form-group');
     });
-    function myFunction() {
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("MyTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
+    var modal = document.getElementById('myModal');
+
 
 </script>
 </html>
