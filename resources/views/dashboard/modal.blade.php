@@ -5,7 +5,7 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h4 class="modal-title">Modal title</h4>
+                              <h4 class="modal-title">Editar Tarefa</h4>
                               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 <i class="material-icons">clear</i>
                               </button>
@@ -72,8 +72,8 @@
 
 
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-link">Nice Button</button>
-                              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-link btn-success">Salvar alterações</button>
+                              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Fechar</button>
                             </div>
                           </div>
                         </div>

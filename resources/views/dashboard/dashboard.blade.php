@@ -2,6 +2,11 @@
 <html lang="en">
 {{--{{dd(auth()->user()->name)}}--}}
 {{--{{dd($tarefas)}}--}}
+{{--@for($i=0;$i<count($tarefas);$i++)--}}
+
+    {{--{{dd($tarefas['1']['6'])}}--}}
+
+{{--@endfor--}}
 
 @include('layouts.header');
 
@@ -98,11 +103,11 @@
                             <div class="card-body">
 
                                 <h4 class="card-title">Nome da Tarefa: {{$tarefas['0']['1']}}</h4>
-                                <p class="card-category">Data de Entrega: {{$tarefas['0']['2']}}</p>
+                                <p class="card-category">Data de Entrega: {{date('d/m/Y',  strtotime($tarefas['0']['3']))}}</p>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
-                                    <p class="card-category">Prioridade: {{$tarefas['0']['3']}}</p>
+                                    <p class="card-category">Prioridade: {{$tarefas['0']['4']}}</p>
                                 </div>
                             </div>
                                 @endif
@@ -147,24 +152,75 @@
                                         </th>
                                         <th>
                                            
-                                          <a href=""> test</a>
+                                        Edição de Tarefas
                                        </th>
                                         </thead>
                                         <tbody>
                                         @if(!empty($tarefas))
                                         @if(count($tarefas) >= '1')
-                                        <tr class="table-success">
-                                            @foreach($tarefas as $key => $array)
-                                            @foreach($array as $column_name => $value)
-                                                    {{--{{dd($tarefas)}}--}}
-                                                <td>{{ $value }}</td>
+                                        <tr class="table-danger">
 
-                                        @endforeach
-                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal" href="{{route('modalget')}}?codigo=<?php echo $value; ?>">
-                        Editar Tarefa
-                      <div class="ripple-container"></div></button></td>
+                                        @for($i=0;$i<count($tarefas);$i++)
+                                            {{--@foreach($tabelas as $rota => $tabela)--}}
+                                            {{--@if($tarefas[$i]['6'] >= '3')--}}
+                                            {{--<tr class="table-sucess">--}}
+                                            {{--@endif--}}
+                                    @if($tarefas[$i]['3'] < date('Y-m-d'))
+                                            <tr class="table-danger">
+@endif
+                                            {{--@if($tarefas[$i]['6'] = '3')--}}
+                                                {{--<tr class="table-sucess">--}}
+                                                    {{--@endif--}}
+                                            {{--<tr>--}}
+                                                {{--@if($tarefas[$i]['5'] = '3')--}}
+                                                    {{--<tr class="table-success">--}}
+                                                {{--@endif--}}
+                                                <td>{{ $tarefas[$i]['0'] }}</td>
+                                                <td>{{ $tarefas[$i]['1'] }}</td>
+                                                <td>{{ $tarefas[$i]['2'] }}</td>
+                                                <td>{{date('d/m/Y',  strtotime($tarefas[$i]['3']))}}</td>
+                                               <?php switch ($tarefas[$i]['4']) {
+                                                case 1:
+                                                echo "<td>Prioridade Máxima</td>";
+                                                break;
+                                                case 2:
+                                                    echo "<td>Prioridade Intermediária</td>";
+                                                break;
+                                                case 3:
+                                                    echo "<td>Prioridade Média</td>";
+                                                break;
+                                                case 4:
+                                                    echo "<td>Baixa Prioridade</td>";
+                                                break;
+                                                case 5:
+                                                    echo "<td>Atividade Normal</td>";;
+                                                break;
+                                                } ?>
+
+                                                <td>{{ $tarefas[$i]['5'] }}</td>
+                                                <?php switch ($tarefas[$i]['6']) {
+                                                    case 1:
+                                                        echo "<td>Nova Tarefa</td>";
+                                                        break;
+                                                    case 2:
+                                                        echo "<td>Tarefa em Progresso</td>";
+                                                        break;
+                                                    case 3:
+                                                        echo "<td>Tarefa Finalizada</td>";
+                                                        break;
+                                                } ?>
+                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal">
+                                                        Editar Tarefa
+                                                        <div class="ripple-container"></div></button></td>
+
+
+                                            </tr>
+
+
+                                        @endfor
+
                                         </tbody>
-                                            @endforeach
+
 
                                         @endif
                                         @endif

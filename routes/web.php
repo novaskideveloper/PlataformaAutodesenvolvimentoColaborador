@@ -25,6 +25,7 @@ Route::get('/register', 'Auth\LoginController@register')->name('register');
 Route::get('/createtask', 'DashboardController@createtask')->name('createtask');
 Route::get('/createteam', 'DashboardController@createteam')->name('createteam');
 Route::get('/creatework', 'DashboardController@creatework')->name('creatework');
+Route::get('/edittask', 'DashboardController@edittask')->name('edittask');
 Route::get('/createnotification', 'DashboardController@createnotification')->name('createnotification');
 Route::post('modalget', 'DashboardController@modalget')->name('modalget');
 Route::post('dashboard', 'Auth\LoginController@dashboard')->name('dashboard');

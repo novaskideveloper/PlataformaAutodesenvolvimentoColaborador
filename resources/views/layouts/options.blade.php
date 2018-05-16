@@ -11,7 +11,7 @@
             <a href="http://www.creative-tim.com" class="simple-text logo-mini">
                 Du
             </a>
-            <a href="http://www.duomo.com.br" class="simple-text logo-normal">
+            <a href="{{redirect('logado')}}" class="simple-text logo-normal">
                 Duomo
             </a>
         </div>

@@ -3,7 +3,7 @@
 
 @include('layouts.header');
 <body class="">
-{{--{{dd($teams)}}--}}
+{{--{{dd(\Illuminate\Support\Facades\Session::all())}}--}}
 {{--@include('dashboard.dashboard');--}}
 {{--{{dd(Session::get('usuario.empresa.0'))}}--}}
 <div class="">
@@ -17,7 +17,7 @@
             <a href="http://www.creative-tim.com" class="simple-text logo-mini">
                 Du
             </a>
-            <a href="http://www.duomo.com.br" class="simple-text logo-normal">
+            <a href="http://duomo.com.br" class="simple-text logo-normal">
                 Duomo
             </a>
         </div>

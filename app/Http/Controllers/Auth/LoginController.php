@@ -157,7 +157,7 @@ class LoginController extends Controller
             $banco = mysqli_select_db($conexao,'duomo');
             mysqli_set_charset($conexao,'utf8');
             $sql = mysqli_query($conexao,"select * from Tarefa where IdTarefa = ".$stringArrayF."");
-//        dd($sql);
+
             if ($sql == false){
                 return view('dashboard/dashboard',compact('resultsemail'));
             }else{
@@ -166,13 +166,9 @@ class LoginController extends Controller
             }
 
             if (count($resultssenha) == 1){
-
-//                return view('dashboard/dashboard')->with('variaveis');
-//                return view('dashboard/dashboard')->withName($results1);
-
-//                return view('layouts/options',compact('resultsemail'));
                 Session::put('usuario.nome', $resultsemail);
                 Session::put('usuario.empresa', $empresausuario);
+//                dd($tarefas);
                 return view('dashboard/dashboard', compact('tarefas','resultsemail','empresausuario'));
 
 //                return route('dashboard', compact('resultsemail','tarefas'));
