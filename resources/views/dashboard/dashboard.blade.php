@@ -208,8 +208,11 @@
                                                     case 3:
                                                         echo "<td>Tarefa Finalizada</td>";
                                                         break;
+                                                        case 4:
+                                                        echo "<td>Tarefa Pausada</td>";
+                                                        break;
                                                 } ?>
-                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal">
+                                                <td><button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal" data-product_id="{{ $tarefas[$i]['0'] }}">
                                                         Editar Tarefa
                                                         <div class="ripple-container"></div></button></td>
 

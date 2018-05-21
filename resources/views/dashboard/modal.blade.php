@@ -31,7 +31,7 @@
                               Equipe
                             <div class="ripple-container"></div></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; top: 40px; left: 1px; will-change: top, left;">
-                              <h6 class="dropdown-header">Dropdown header</h6>
+                              <h6 class="dropdown-header">Selecione a Equipe</h6>
                               <a class="dropdown-item" href="#">Action</a>
                               <a class="dropdown-item" href="#">Another action</a>
                               <a class="dropdown-item" href="#">Something else here</a>
@@ -45,10 +45,12 @@
                               Prioridade
                             <div class="ripple-container"></div></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; top: 40px; left: 1px; will-change: top, left;">
-                              <h6 class="dropdown-header">Dropdown header</h6>
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
+                              <h6 class="dropdown-header">Selecione a prioridade</h6>
+                                <a class="dropdown-item" name="1">1 - Prioridade Maxima</a>
+                                <a class="dropdown-item" name="2">2 - Prioridade Intermediária</a>
+                                <a class="dropdown-item" name="3">3 - Prioridade Média</a>
+                                <a class="dropdown-item" name="4">4 - Baixa Prioridade</a>
+                                <a class="dropdown-item" name="5">5 - Atividade Normal</a>
                             </div>
                           </div>
                           </div>
@@ -59,10 +61,12 @@
                                         Status
                                         <div class="ripple-container"></div></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; top: 40px; left: 1px; will-change: top, left;">
-                                        <h6 class="dropdown-header">Dropdown header</h6>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <h6 class="dropdown-header">Selecione o status</h6>
+                                        <a class="dropdown-item" name="2">2 - Tarefa em progresso</a>
+                                        <a class="dropdown-item" name="3">3 - Tarefa Finalizada</a>
+                                        <a class="dropdown-item" name="4">4 - Tarefa Pausada</a>
+                                        {{--<a class="dropdown-item" name="4">4 - Baixa Prioridade</a>--}}
+                                        {{--<a class="dropdown-item" name="5">5 - Atividade Normal</a>--}}
                                     </div>
                                 </div>
                             </div>

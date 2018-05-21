@@ -27,6 +27,7 @@ Route::get('/createteam', 'DashboardController@createteam')->name('createteam');
 Route::get('/creatework', 'DashboardController@creatework')->name('creatework');
 Route::get('/edittask', 'DashboardController@edittask')->name('edittask');
 Route::get('/createnotification', 'DashboardController@createnotification')->name('createnotification');
+Route::get('/editprofile', 'DashboardController@editprofile')->name('editprofile');
 Route::post('modalget', 'DashboardController@modalget')->name('modalget');
 Route::post('dashboard', 'Auth\LoginController@dashboard')->name('dashboard');
 Route::post('reset', 'Auth\LoginController@resetsenha')->name('resetsenha');
@@ -37,6 +38,7 @@ Route::post('task', 'DashboardController@task')->name('task');
 Route::post('work', 'DashboardController@work')->name('work');
 Route::post('notification', 'DashboardController@notification')->name('notification');
 Route::post('modalpost', 'DashboardController@modalpost')->name('modalpost');
+Route::post('confirmprofile', 'DashboardController@confirmprofile')->name('confirmprofile');
 //Route::post('tarefas', 'DashboardController@tarefas')->name('tarefas');
 
 

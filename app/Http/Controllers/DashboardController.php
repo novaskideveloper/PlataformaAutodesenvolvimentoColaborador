@@ -245,11 +245,33 @@ public function notification(Request $request){
 
 }
 public function modalget(Request $request){
-dd($request);
+//dd($request);
 
 }
 public function modalpost(Request $request){
 
 
+}
+public function editprofile(){
+    $id = Session::get('usuario.nome.0')->idLogin;
+        $user = DB::table('duomo.login')->where('IdLogin',$id)->first();
+$work = DB::table('duomo.empresausuario')->where('IdLogin',$id)->first();
+$workuser = DB::table('duomo.empresa')->where('IdEmpresa',$work->IdEmpresa)->first();
+//dd($workuser);
+return view('dashboard/profile',compact('user','workuser'));
+}
+public function confirmprofile(Request $request){
+        $data = $request->all();
+//        dd($data);
+        $senha = md5($data['senha']) ;
+    $id = Session::get('usuario.nome.0')->idLogin;
+//    $update = [['Nome' => $data['Nome']],['TeleFoneCelular' => $data['TelCel']],['Email' => $data['email']],['TempoTrabalho' => $data['TempoTrabalho']]];
+//    $updatepass = [['Nome' => $data['Nome']],['TeleFoneCelular' => $data['TelCel']],['Email' => $data['email']],['TempoTrabalho' => $data['TempoTrabalho']],['Senha' => $senha]];
+        if ($data['senha'] == null){
+            DB::update('update login set Nome = "'.$data['Nome'].'",TelefoneCelular = "'.$data['TelCel'].'",Email = "'.$data['email'].'",TempoTrabalho = "'.$data['TempoTrabalho'].'" where idLogin = :id', ['id' => $id ]);
+        }else{
+            DB::update('update login set Nome = "'.$data['Nome'].'",TelefoneCelular = "'.$data['TelCel'].'",Email = "'.$data['email'].'",TempoTrabalho = "'.$data['TempoTrabalho'].'",Senha = "'.$senha.'" where idLogin = :id', ['id' => $id ]);
+            }
+    return redirect('editprofile');
 }
 }

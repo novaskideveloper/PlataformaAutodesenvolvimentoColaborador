@@ -11,7 +11,7 @@
             <a href="http://www.creative-tim.com" class="simple-text logo-mini">
                 Du
             </a>
-            <a href="{{redirect('logado')}}" class="simple-text logo-normal">
+            <a href="http://duomo.com.br" class="simple-text logo-normal">
                 Duomo
             </a>
         </div>
@@ -29,24 +29,24 @@
                     </a>
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="nav-link" href="#">--}}
+                                    {{--<span class="sidebar-mini"> MP </span>--}}
+                                    {{--<span class="sidebar-normal"> My Profile </span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span class="sidebar-mini"> MP </span>
-                                    <span class="sidebar-normal"> My Profile </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="{{route('editprofile')}}">
                                     <span class="sidebar-mini"> EP </span>
-                                    <span class="sidebar-normal"> Edit Profile </span>
+                                    <span class="sidebar-normal"> Editar Perfil </span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span class="sidebar-mini"> S </span>
-                                    <span class="sidebar-normal"> Settings </span>
-                                </a>
-                            </li>
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="nav-link" href="#">--}}
+                                    {{--<span class="sidebar-mini"> S </span>--}}
+                                    {{--<span class="sidebar-normal"> Settings </span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
