@@ -39,6 +39,7 @@ Route::post('work', 'DashboardController@work')->name('work');
 Route::post('notification', 'DashboardController@notification')->name('notification');
 Route::post('modalpost', 'DashboardController@modalpost')->name('modalpost');
 Route::post('confirmprofile', 'DashboardController@confirmprofile')->name('confirmprofile');
+Route::post('home', 'Auth\LoginController@home')->name('home');
 //Route::post('tarefas', 'DashboardController@tarefas')->name('tarefas');
 
 

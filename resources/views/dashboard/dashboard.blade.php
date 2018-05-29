@@ -7,7 +7,7 @@
     {{--{{dd($tarefas['1']['6'])}}--}}
 
 {{--@endfor--}}
-
+{{--{{dd($_SESSION)}}--}}
 @include('layouts.header');
 
 <body class="">

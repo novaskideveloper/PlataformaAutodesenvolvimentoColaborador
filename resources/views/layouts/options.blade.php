@@ -1,5 +1,5 @@
 {{--@extends('dashboard.dashboard');--}}
-{{--{{dd()}}--}}
+{{--{{dd($resultsemail)}}--}}
 <div class="">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="{{ asset('assets/img/sidebar-1.jpg') }}">
         <!--
@@ -41,12 +41,12 @@
                                     <span class="sidebar-normal"> Editar Perfil </span>
                                 </a>
                             </li>
-                            {{--<li class="nav-item">--}}
-                                {{--<a class="nav-link" href="#">--}}
-                                    {{--<span class="sidebar-mini"> S </span>--}}
-                                    {{--<span class="sidebar-normal"> Settings </span>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('home')}}">
+                                    <span class="sidebar-mini"> L </span>
+                                    <span class="sidebar-normal"> Logout </span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

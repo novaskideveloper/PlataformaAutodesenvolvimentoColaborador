@@ -132,7 +132,11 @@ class LoginController extends Controller
 
     public function logado(Request $request)
     {
-//        session()->flush();
+        session_start();
+//        session()->regenerate();
+//        $value = $request->session()->get('key', 'default');
+//        $data = $request->session()->all();
+//        dd($data);
         $data = $request->all();
 
 
@@ -142,7 +146,7 @@ class LoginController extends Controller
         $resultsemail = DB::select('select * from login where Email = :id', ['id' => $email ]);
         $resultssenha = DB::select('select * from login where Senha = :id', ['id' => $senha ]);
         $resultsemailid = array_column($resultsemail,'idLogin') ;
-
+//        dd($resultsemail);
         if (count($resultsemail) == 1){
 
             $tarefasusuario = DB::select('select * from usuariotarefa where Login_idLogin = :id', ['id' => $resultsemailid['0'] ]);
@@ -166,10 +170,12 @@ class LoginController extends Controller
             }
 
             if (count($resultssenha) == 1){
-                Session::put('usuario.nome', $resultsemail);
+             Session::put('usuario.nome', $resultsemail);
                 Session::put('usuario.empresa', $empresausuario);
+//               dd($nome);
 //                dd($tarefas);
                 return view('dashboard/dashboard', compact('tarefas','resultsemail','empresausuario'));
+//                return view('layouts/options', compact('resultsemail'));
 
 //                return route('dashboard', compact('resultsemail','tarefas'));
 //                Route::post("dashboard","DashboardController");
@@ -194,6 +200,10 @@ class LoginController extends Controller
         return view('Auth/reset');
 
     }
+
+//    public function options(){
+//
+//    }
 
     public function resetsenha(Request $request){
 
@@ -233,6 +243,11 @@ class LoginController extends Controller
 //        dd($selectDb);
         return view('Auth/register',compact('empresa'));
 //
+    }
+    public function home(){
+        session_destroy();
+//        dd($_SESSION);
+        return view('auth/login');
     }
 
 }

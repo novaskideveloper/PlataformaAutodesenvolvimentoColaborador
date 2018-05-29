@@ -2,7 +2,8 @@
 <html lang="en">
 
 @include('layouts.header');
-{{--{{dd($user)}}--}}
+{{--{{dd()}}--}}
+{{--@extends/('layouts.options');--}}
 <body class="">
 <div class="wrapper">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="{{ asset('assets/img/sidebar-1.jpg') }}">
@@ -11,6 +12,7 @@
 
           Tip 2: you can also add an image using data-image tag
       -->
+
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text logo-mini">
                 Du
@@ -45,12 +47,12 @@
                                     <span class="sidebar-normal"> Editar Perfil </span>
                                 </a>
                             </li>
-                            {{--<li class="nav-item">--}}
-                            {{--<a class="nav-link" href="#">--}}
-                            {{--<span class="sidebar-mini"> S </span>--}}
-                            {{--<span class="sidebar-normal"> Settings </span>--}}
-                            {{--</a>--}}
-                            {{--</li>--}}
+                            <li class="nav-item">
+                            <a class="nav-link" href="{{route('home')}}">
+                            <span class="sidebar-mini"> L </span>
+                            <span class="sidebar-normal"> Logout </span>
+                            </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
